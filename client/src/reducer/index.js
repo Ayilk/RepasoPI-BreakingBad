@@ -33,18 +33,26 @@ function rootReducer(state = initialState, action){
                 ...state,
                 characters: createdFilter
             } 
-        case 'ODER_BY_NAME':
+        case 'ORDER_BY_NAME':
             let sortedArr = action.payload === 'asc' ?
-                            state.characters.sort(function(a,b){
-                                if(a.name > b.name){return 1;}
-                                if(b.name > a.name){return -1;}
-                                return 0;
-                            }) :
-                            state.characters.sort(function(a,b){
-                                if(a.name > b.name){return -1;}
-                                if(b.name > a.name){return 1;}
-                                return 0;
-                            })
+                state.characters.sort(function (a, b) {
+                    if (a.name > b.name) {
+                        return 1;
+                    }
+                    if (b.name > a.name) {
+                        return -1;
+                    }
+                    return 0;
+                }) :
+                state.characters.sort(function (a, b) {
+                    if (a.name > b.name) {
+                        return -1;
+                    }
+                    if (b.name > a.name) {
+                        return 1;
+                    }
+                    return 0;
+                })
             return {
                 ...state,
                 characters: sortedArr

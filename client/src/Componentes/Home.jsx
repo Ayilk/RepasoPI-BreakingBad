@@ -40,7 +40,7 @@ export default function Home (){
      };
 
      function handleSort(e){
-         e.preventDefault();
+         
          dispatch(orderByName(e.target.value));
          setCurrentPage(1);
          setOrden(`Ordenado ${e.target.value}`)
@@ -50,7 +50,7 @@ export default function Home (){
          <div>
              <Link to= '/character'> Crear Personaje </Link>
              {/* <h1> AGUANTE BREAKING BAD </h1> */}
-             <button onClick = {e =>{handleClick(e)}}>
+             <button onClick = {e => {handleClick(e)}}>
                  Volver a cargar todos los personajes
              </button>
          
